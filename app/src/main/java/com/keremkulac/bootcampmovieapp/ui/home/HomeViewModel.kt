@@ -4,12 +4,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.keremkulac.bootcampmovieapp.data.entity.Movie
 import com.keremkulac.bootcampmovieapp.data.repository.MovieRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel : ViewModel(){
-    private val movieRepository = MovieRepository()
+@HiltViewModel
+class HomeViewModel @Inject constructor(val movieRepository: MovieRepository) : ViewModel(){
     val moviesList = MutableLiveData<List<Movie>>()
     init {
         loadMovies()

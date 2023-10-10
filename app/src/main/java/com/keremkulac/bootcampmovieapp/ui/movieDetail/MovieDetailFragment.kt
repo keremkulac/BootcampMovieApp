@@ -9,9 +9,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.navArgs
 import com.keremkulac.bootcampmovieapp.R
 import com.keremkulac.bootcampmovieapp.databinding.FragmentMovieDetailBinding
-import com.keremkulac.bootcampmovieapp.ui.MovieDetailFragmentArgs
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MovieDetailFragment : Fragment() {
     private lateinit var binding: FragmentMovieDetailBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
